@@ -31,7 +31,7 @@ setup(
     author_email="jl8570@nyu.edu",
 
     description="A Unified Deep Learning Model for Multi-task Reaction Predictions",
-    long_description=read("README.rst"),
+    long_description=read("README.md"),
 
     packages=find_packages(exclude=('tests',)),
     package_data={'t5chem': ['vocab/*']},
