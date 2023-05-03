@@ -1,6 +1,6 @@
 # CatScore
 
-This repo provides code for "CatScore: Automatic Evaluation of Catalyst Design" by Bing Yan. This repo is based off [T5Chem](https://github.com/HelloJocelynLu/t5chem) by Jieyu Lu and Yingkai Zhang.
+This repo provides code for "CatScore: Automatic Evaluation of Catalyst Design" by Bing Yan. This repo is based off [T5Chem](https://github.com/HelloJocelynLu/t5chem) by Jieyu Lu and Yingkai Zhang. Note that this repo can be found at https://github.com/bing4chem/CatScore.
 
 ## Dependencies
 
@@ -34,7 +34,7 @@ cd ${WORKING_DIR}
 
 ## Train a catalyst design model and generate from it
 
-This project provides an automatic evaluation metric for catalyst design models, so we first need a catalyst design model. We will train such a model by finetuning a pretrained codet5:
+This project provides an automatic evaluation metric for catalyst design models, so we first need a catalyst design model. We will train such a model by finetuning a pretrained codet5. I am using the 1 percent setting (see my report for more details) as an example. For other settings simply change `1percent` to other percentages:
 
 ```
 stdbuf -oL -eL python run_trainer.py --data_dir ../data/AHO/1percent/ --output_dir aho_1percent_catpred_val/ --task_type product --num_epoch 100 --pretrain Salesforce/codet5-small --num_classes 2 > log.train.aho.1percent.catpred.val 2>&1&
